@@ -26,15 +26,15 @@ class MyApp extends StatelessWidget {
             children: [
               const Text('This is [not] my first app!'),
               ElevatedButton(
-                onPressed: answerQuestion,
+                onPressed: () => print('Hey, that tickles'),
                 child: const Text('Hey look, a button!'),
               ),
               ElevatedButton(
-                onPressed: answerQuestion,
+                onPressed: () => print('Stop that!'),
                 child: const Text('Oh no! Another button!'),
               ),
               ElevatedButton(
-                onPressed: answerQuestion,
+                onPressed: () => print('I\m telling mom!!!!'),
                 child: const Text('Whatever will you do?'),
               ),
             ],
