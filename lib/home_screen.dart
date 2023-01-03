@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var promptIndex = 0;
+
+  void buttonPress() {
+    promptIndex = 1;
+    setState(() {});
+    print(promptIndex);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    List<String> questions = [
-      'What\'s your favorite color?',
-      'What\'s your favorite animal?',
+    List<String> prompts = [
+      'This is [not] my first app!',
+      'Hey, that tickles!',
+      'Stop that!',
+      'I\'m telling mom!!!!',
     ];
     return Scaffold(
       appBar: AppBar(
@@ -16,10 +31,10 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const Text('This is [not] my first app!'),
+            Text(prompts[promptIndex]),
             ElevatedButton(
               child: const Text('Hey look, a button!'),
-              onPressed: () => print('Hey, that tickles'),
+              onPressed: () => buttonPress(),
             ),
             ElevatedButton(
               child: const Text('Oh no! Another button!'),
