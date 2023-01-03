@@ -12,9 +12,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var _promptIndex = 0;
 
-  void _buttonPress() {
+  void _buttonPress(value) {
     setState(() {
-      _promptIndex = 1;
+      _promptIndex = value;
     });
     print(_promptIndex);
   }
@@ -31,6 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(constants.title),
+        actions: [
+          IconButton(
+            onPressed: () => _buttonPress(0),
+            icon: const Icon(Icons.refresh),
+          )
+        ],
       ),
       body: Center(
         child: Column(
@@ -38,15 +44,15 @@ class _HomeScreenState extends State<HomeScreen> {
             Prompt(prompts[_promptIndex]),
             ElevatedButton(
               child: Text(constants.buttonOne),
-              onPressed: () => _buttonPress(),
+              onPressed: () => _buttonPress(1),
             ),
             ElevatedButton(
               child: Text(constants.buttonTwo),
-              onPressed: () => _buttonPress(),
+              onPressed: () => _buttonPress(2),
             ),
             ElevatedButton(
               child: Text(constants.buttonThree),
-              onPressed: () => _buttonPress(),
+              onPressed: () => _buttonPress(3),
             ),
           ],
         ),
