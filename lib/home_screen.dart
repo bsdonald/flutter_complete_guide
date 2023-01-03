@@ -18,16 +18,16 @@ class HomeScreen extends StatelessWidget {
           children: [
             const Text('This is [not] my first app!'),
             ElevatedButton(
-              onPressed: () => print('Hey, that tickles'),
               child: const Text('Hey look, a button!'),
+              onPressed: () => print('Hey, that tickles'),
             ),
             ElevatedButton(
-              onPressed: () => print('Stop that!'),
               child: const Text('Oh no! Another button!'),
+              onPressed: () => print('Stop that!'),
             ),
             ElevatedButton(
-              onPressed: () => print('I\'m telling mom!!!!'),
               child: const Text('Whatever will you do?'),
+              onPressed: () => print('I\'m telling mom!!!!'),
             ),
           ],
         ),
