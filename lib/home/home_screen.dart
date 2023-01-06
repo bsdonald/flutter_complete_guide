@@ -16,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _promptIndex = value;
     });
-    print(_promptIndex);
   }
 
   @override
