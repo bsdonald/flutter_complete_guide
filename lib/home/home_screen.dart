@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/home/constants.dart';
 import 'package:shop_app/home/prompt.dart';
+import 'package:shop_app/home/response.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -41,17 +42,17 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Prompt(prompts[_promptIndex]),
-            ElevatedButton(
-              child: Text(constants.buttonOne),
+            Response(
               onPressed: () => _buttonPress(1),
+              text: constants.buttonOne,
             ),
-            ElevatedButton(
-              child: Text(constants.buttonTwo),
+            Response(
               onPressed: () => _buttonPress(2),
+              text: constants.buttonTwo,
             ),
-            ElevatedButton(
-              child: Text(constants.buttonThree),
+            Response(
               onPressed: () => _buttonPress(3),
+              text: constants.buttonThree,
             ),
           ],
         ),
