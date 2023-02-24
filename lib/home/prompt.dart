@@ -6,6 +6,14 @@ class Prompt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(promptText);
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.all(10),
+      child: Text(
+        promptText,
+        style: const TextStyle(fontSize: 28),
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 }
