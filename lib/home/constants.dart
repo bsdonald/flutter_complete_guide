@@ -2,10 +2,9 @@ class HomeConstants {
   final String title = 'Hello World';
 
   //prompts
-  final String promptOne = 'This is [not] my first app!';
-  final String promptTwo = 'Hey, that tickles!';
-  final String promptThree = 'Stop that!';
-  final String promptFour = 'I\'m telling mom!!!!';
+  final String promptOne = 'What\'s your favorite color?';
+  final String promptTwo = 'What\'s your favorite animal?';
+  final String promptThree = 'What\'s your favorite instrument?';
 
   //buttons
   final String buttonOne = 'Hey look, a button!';

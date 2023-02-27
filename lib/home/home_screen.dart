@@ -13,27 +13,43 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var _promptIndex = 0;
 
-  void _buttonPress(value) {
+  void _buttonPress() {
     setState(() {
-      _promptIndex = value;
+      _promptIndex = _promptIndex + 1;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final HomeConstants constants = HomeConstants();
-    List<String> prompts = [
-      constants.promptOne,
-      constants.promptTwo,
-      constants.promptThree,
-      constants.promptFour,
+    List<Map<String, Object>> prompts = [
+      {
+        'questionText': constants.promptOne,
+        'answers': ['Black', 'Red', 'Green', 'White'],
+      },
+      {
+        'questionText': constants.promptTwo,
+        'answers': ['Lion', 'Hawk', 'Dolphin', 'Zebra'],
+      },
+      {
+        'questionText': constants.promptThree,
+        'answers': ['Trumpet', 'Piano', 'Clarinet', 'Flute'],
+      },
     ];
+
+    // List<String> prompts = [
+    //   constants.promptOne,
+    //   constants.promptTwo,
+    //   constants.promptThree,
+    //   constants.promptFour,
+    // ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(constants.title),
         actions: [
           IconButton(
-            onPressed: () => _buttonPress(0),
+            onPressed: () => _buttonPress(),
             icon: const Icon(Icons.refresh),
           )
         ],
@@ -41,19 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: Column(
           children: [
-            Prompt(prompts[_promptIndex]),
-            Response(
-              onPressed: () => _buttonPress(1),
-              text: constants.buttonOne,
-            ),
-            Response(
-              onPressed: () => _buttonPress(2),
-              text: constants.buttonTwo,
-            ),
-            Response(
-              onPressed: () => _buttonPress(3),
-              text: constants.buttonThree,
-            ),
+            Prompt(prompts[_promptIndex]['questionText'] as String),
+            ...(prompts[_promptIndex]['answers'] as List<String>).map((answer) {
+              return Response(onPressed: _buttonPress, text: answer);
+            }).toList(),
           ],
         ),
       ),
