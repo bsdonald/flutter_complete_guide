@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/home/home_screen.dart';
+import 'package:shop_app/quiz/quiz_home_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeScreen());
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/quiz': (context) => const QuizHomeScreen(),
+      },
+    );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/home/constants.dart';
+import 'package:shop_app/quiz/constants.dart';
 
 class Response extends StatelessWidget {
   final VoidCallback onPressed;
